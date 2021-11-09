@@ -67,9 +67,14 @@ class Video(Resource):
 
         return result
 
+    @marshal_with(resource_fields)
     def delete(self, video_id):
-
-        pass
+        result = VideoModel.query.filter_by(id=video_id).first()
+        if not result:
+            abort(404, message="Video doesn't exist, cannot delete!")
+        db.session.delete(result)
+        db.session.commit()
+        return result
 
 
 app = Flask(__name__)

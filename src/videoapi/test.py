@@ -25,3 +25,6 @@ def main():
     input()
     response = requests.patch(BASE + "video/2", {"likes": 99})
     print(response.json())
+    input()
+    response = requests.delete(BASE + "video/2")
+    print(response.json())
