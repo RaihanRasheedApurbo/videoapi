@@ -10,16 +10,11 @@ def main():
         {"likes": 35, "name": "tim", "views": 2000},
     ]
 
-    for i in range(len(data)):
-        response = requests.put(BASE + "video/" + str(i), data[i])
-        print(response.json())
+    # for i in range(len(data)):
+    #     response = requests.put(BASE + "video/" + str(i), data[i])
+    #     print(response.json())
 
-    input()
-    response = requests.delete(BASE + "video/0")
-    print(response)
-    input()
-    response = requests.get(BASE + "video/6")
-    print(response.json())
-    input()
+    # input()
     response = requests.get(BASE + "video/2")
+    print(response)
     print(response.json())
